@@ -139,8 +139,10 @@ a plane and operating at nearly full throttle.  The ideal default for
 CRUISE_SPEED is closer to 50% throttle.  Experimentally, that seems to be
 near 1.25 m/s ground speed so we'll use that.  In summary:
 
-| CRUISE_THROTTLE | 50 % |
-| CRUISE_SPEED | 1.25 m/s |
+| Setting         | Value    |
+| --------------- | -------- |
+| CRUISE_THROTTLE | 50 %     |
+| CRUISE_SPEED    | 1.25 m/s |
 
 ## Compass calibration
 
