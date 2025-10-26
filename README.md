@@ -1,5 +1,7 @@
 # Roboboat One
 
+![Roboboat One](images/roboboat-one.jpg)
+
 ## Bill of Materials
 
 ## Autopilot
@@ -127,3 +129,26 @@ Otherwise setup RCx_OPTIONS switch to arm it
 See switch option “81”, “153, or “154”.
 Note that we can only disarm in HOLD mode because of spinning.
 
+## Tuning speed
+
+When driving a search pattern in autopilot, Ardupilot will attempt to operate
+at CRUISE_SPEED and it will start at CRUISE_THROTTLE to get there.  We have to
+set the CRUISE_THROTTLE and CRUISE_SPEED to reasonable values.  The Rover
+default of 2 m/s is too fast for our vessel--at that speed it's basically on
+a plane and operating at nearly full throttle.  The ideal default for
+CRUISE_SPEED is closer to 50% throttle.  Experimentally, that seems to be
+near 1.25 m/s ground speed so we'll use that.  In summary:
+
+| CRUISE_THROTTLE | 50 % |
+| CRUISE_SPEED | 1.25 m/s |
+
+## Compass calibration
+
+The QGroundControl compass calibration routines work OK.  But I struggled with
+compass calibration nonetheless.  I found that the best calibration data comes
+from uploading a long mission to the Ardupilot [MAGFit in-flight compass
+calibration tool](https://firmware.ardupilot.org/Tools/WebTools/MAGFit/),
+letting it calculate new constants, and uploading those to the boat.
+
+With proper wire routing it should be possible to disable compass motor
+interference compensation (COMPASS_MOTCT = 0).
