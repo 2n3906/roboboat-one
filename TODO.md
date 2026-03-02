@@ -5,6 +5,7 @@ Project Description
 ### Todo
 
 - [ ] Tune CRUISE_THROTTLE and CRUISE_SPEED
+- [ ] Experiment with WP_PIVOT_ANGLE = 0 and using SCurves for corners
 
 ### In Progress
 - [ ] Task
